@@ -35,6 +35,9 @@ dependencies {
 }
 
 shadowJar {
-    baseName = "http4kGraal"
+    baseName = 'http4kGraal'
+    classifier = null
+    version = null
+
     mergeServiceFiles()
 }

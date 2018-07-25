@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-./gradlew shadowJar
+set -e
 
-mv build/libs/http4kGraal-1.0-SNAPSHOT-all.jar build/libs/http4kGraal.jar
+./gradlew clean shadowJar
 
 ./graalvm/Contents/Home/bin/native-image \
     -H:+ReportUnsupportedElementsAtRuntime \
