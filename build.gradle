@@ -33,3 +33,8 @@ dependencies {
     compile "org.http4k:http4k-core:$http4k_version"
     compile "org.http4k:http4k-server-apache:$http4k_version"
 }
+
+shadowJar {
+    baseName = "http4kGraal"
+    mergeServiceFiles()
+}

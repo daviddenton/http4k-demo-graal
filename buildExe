@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+./gradlew shadowJar
+
+mv build/libs/http4kGraal-1.0-SNAPSHOT-all.jar build/libs/http4kGraal.jar
+
+./graalvm/Contents/Home/bin/native-image \
+    -H:+ReportUnsupportedElementsAtRuntime \
+    -J-Xmx3G -J-Xms3G --no-server \
+    -jar build/libs/http4kGraal.jar
